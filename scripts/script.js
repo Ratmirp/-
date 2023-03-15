@@ -21,6 +21,8 @@ let query = 0;
 let enter_btn = document.querySelector(".enter_btn");
 let redistr_btn  = document.querySelector(".redistr_btn");
 let orders_btn = document.querySelector(".orders_btn");
+let del_btn = document.querySelectorAll(".del_btn");
+
 
 orders_btn.onclick = function(){
     window.location.href = 'http://furmarket/orders.php';  
@@ -45,6 +47,11 @@ more_btn.onclick = function(){
 profile_btn.onclick = function(){
     window.location.href = 'http://furmarket/account.php';
 }
+
+
+
+
+
 
 
 

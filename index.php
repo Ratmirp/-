@@ -106,7 +106,7 @@
 					$number_rows = mysqli_num_rows($query);
 
 					for ($k = 0; $k < $number_rows; $k++) { 
-						$result = mysqli_fetch_assoc($query);
+						$result = mysqli_fetch_assoc($query);                   
                         $result_user = mysqli_fetch_assoc($query_user);
 				?>
                     <div class="ad">
@@ -116,16 +116,16 @@
                             <h2><?echo $result['text'];?></h2s> 
                             <div class="d-flex" style="padding-top: 10px;">
                                 <h1><?echo $result['price'] . " р/кг"?></h1>
+                                <!--Удаление поста -->
+                                <form action="deleteAd.php" method="GET">    
+                                    <input name="del_id" type="text" value="<?echo $result['id'];?>" style="display: none;"> 
+                                    <button type="btn"class="pay_btn" style=" background: url(img/pay.svg); background-size: 100% 100%; width: 220px; height: 75px; margin-left: 55px; border: none;"></button>
+                                </form>       
                                 <div class="favorite_btn"></div>
-                            </div>
-                           
-                        </div>
-                           
+                            </div>                        
+                        </div>                         
                     </div>       
-                    <form action="deleteAd.php" method="GET">    
-                        <input name="del_id" type="text" value="<?echo $result['id'];?>" style="display: none;"> 
-                        <button type="button">Удалить</button>
-                    </form>               
+                            
                 <?
 		  			} 
 				?> 
@@ -136,6 +136,21 @@
         
         <script src="scripts/script.js"></script>
         <!--Будующий футер-->
-        <div class="footer">футер</div>
+        <div class="footer d-flex">
+            <div class="col-4">
+                <p style="font-size: 20px; color: #F4EBE0; text-align: center; padding-top: 50px;">Часто задаваемые вопросы</p>
+                <div class="d-flex" style="padding-top: 250px; padding-left: 50px;">
+                    <p style="font-size: 20px; color: #F4EBE0;">поддержка: +79248705714</p>
+                    <p style="margin-left: 10px; font-size: 20px; color: #F4EBE0;">example@sample.lol</p>
+                </div>
+            </div>
+            <div class="col-4">
+                <input type="text" class="enterInput">
+            </div>
+            <div class="col-4">
+                <input type="text" class="enterInput">
+                <p style="font-size: 20px; color: #F4EBE0; padding-left: 30px;">техподержка или ещё что то</p>
+            </div>
+        </div>
 </body>
 </html>

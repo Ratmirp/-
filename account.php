@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account</title>
     <style>
@@ -20,15 +21,16 @@
             font-size: 20px;
         }
         .back_btn {
-            border: 3px solid #4A352A; 
-            background: #F4EBE0; 
+            background: url(img/back.png);
+            background-size: 100% 100%;
             border-radius: 17px; 
             font-size: 20px;
-            width: 95px; 
-            height: 40px; 
+            width: 335px; 
+            height: 35px; 
             padding-top: 10px;
             padding-left: 10px;
             font-family: ubuntu;
+            margin-top: 150px;
         }
         .enter_plate {
             z-index: 5;
@@ -36,6 +38,7 @@
             top: 75px;
             border-radius: 20px;
             font-family: ubuntu;
+            margin-top: 150px;
         }
         .enter_btn {
             background: #4A352A;
@@ -78,19 +81,28 @@
             </style>
 </head>
 <body style="overflow-y: auto; margin: 0; background: url(img/bgw.png); ">
-        <div class="back_btn">Вернутся</div>
+            <!-- header-->
+            <div class="extra_head col-12">
+                <div class="back_skin col-12"></div>
+                <div class="mapIcon" style="margin-left: 30px;"></div>
+            </div>
+            <div class="head_list col-12" id="navbar">
+                    <div class="logo" style="margin-left: auto; margin-right: auto;"></div>
+            </div>
             <!-- Вход в аккаунт-->
             <div class="enter_plate">
             
             <form action="login.php" method="POST">
                 <h1 style="text-align: center;">Вход</h1>
+                <p style="text-align: center;"><?echo $_SESSION['role'];?></p>
+                <p style="text-align: center;"><?echo $_SESSION['email'];?></p>
                 <p style="margin-left: 680px;">Имя</p>
                 <div style="text-align: center;">
-                    <input name="login" type="text" class="enterInput inputs">
+                    <input name="login" type="text" class="enterInput inputs" value="<?echo $_SESSION['login'];?>">
                 </div>
                 <p style="margin-left: 680px;">Пароль</p>
                 <div style="text-align: center;">
-                    <input name="password" type="password" class="enterInput inputs">
+                    <input name="password" type="password" class="enterInput inputs" value="<?echo $_SESSION['email'];?>">
                 </div>
                 
                 <div style="text-align: center;"><button class="enter_btn">Вход</button></div>
@@ -101,12 +113,24 @@
             <? $connect = mysqli_connect('127.0.0.1','root','', 'furmarket');
 				$user = mysqli_query($connect, "SELECT * FROM users WHERE id = '{$_SESSION['id']}'");
 				$user_result = mysqli_fetch_assoc($user);
-                    echo $_SESSION['login'];
-                    echo $_SESSION['email'];
-                    echo $_SESSION['role'];
+                    
+                
+                    if($_SESSION['role'] == 'админ'){
+                        echo " You are Admin";
+                        ?>
+                            <script>let roleCheak = "admin";</script>
+                        <?
+                    }else {
+                        
+                        ?>
+                            <script>let roleCheak = "regular";</script>
+                        <?
+                    }	
+
 
             ?>
-            
+            <div class="back_btn"></div>
         <script src="scripts/script_account.js"></script>
+     
 </body>
 </html>
