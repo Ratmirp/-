@@ -44,6 +44,7 @@
     </style>
 </head>
 <body style="background: url(img/bgw.png)">
+
     <form action="registrationCheak.php" method="POST">
             <div class="box">
                 <span>Добро Пожаловать!</span>
@@ -62,8 +63,7 @@
                 </select>
                     <div>
                         <button class="reg_btn">Зарегестрироваться</button>
-                    </div>
-                
+                    </div>      
             </div>
     </form>
 </body>

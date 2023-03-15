@@ -23,12 +23,15 @@
      
     </style>
 </head>
-<body>
-        
+<body>   
         <!--Header -->
         <div class="extra_head col-12">
         <div class="back_skin col-12"></div>
             <div class="mapIcon" style="margin-left: 30px;"></div>
+            <div class="d-flex" style="padding-top: 10px;">
+                <p style="margin-left: 1400px; font-size: 20px; color: #F4EBE0;">поддержка: +79248705714</p>
+                <p style="margin-left: 10px; font-size: 20px; color: #F4EBE0;">example@sample.lol</p>
+            </div>
         </div>
         <div class="head_list col-12" id="navbar">
             <div class="d-flex">
@@ -59,43 +62,41 @@
 
         <div class="kategories"></div>
         <!-- Карусель-->
-<div class="d-flex">
-<div class="carusel">
-<div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
-  <div class="carousel-inner">
-    <div class="carousel-item active carousel_div">
-      <img src="img/slayeder1.png" class="d-block w-100">
-    </div>
-    <div class="carousel-item carousel_div">
-      <img src="img/slayeder2.png" class="d-block w-100">
-    </div>
-    <div class="carousel-item carousel_div">
-      <img src="img/slayeder3.png" class="d-block w-100">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-    <div class="back_skin" style="top: 840px; width: 1200px;"> <!-- Просто исправляет маленький баг-->
-        
-    </div>
-    <div class="extra_carusel">
-        <h2>Крупнейший аукцион пушнины в Якутии</h2>
-    </div>
-</div>
+        <div class="d-flex">
+            <div class="carusel">
+            <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-inner">
+                <div class="carousel-item active carousel_div">
+                <img src="img/slayeder1.png" class="d-block w-100">
+                </div>
+                <div class="carousel-item carousel_div">
+                <img src="img/slayeder2.png" class="d-block w-100">
+                </div>
+                <div class="carousel-item carousel_div">
+                <img src="img/slayeder3.png" class="d-block w-100">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+            </div>
+                <div class="back_skin" style="top: 840px; width: 1200px;"> <!-- Просто исправляет маленький баг--></div>
+                <div class="extra_carusel">
+                    <h2>Крупнейший аукцион пушнины в Якутии</h2>
+                </div>
+        </div>
 
 <div class="extra_main">
         <img src="img/ex1.png">
         <h2 style="text-align: center; color: black;">Рога, копыта, черепа, кости</h2>
 </div>
 
-</div>
+        </div>
 
         <div class="main_space_ads"> <!--сюда будуь выводится все продажи-->
             <?	
@@ -113,17 +114,18 @@
                         </div>
                         <div style="color: #4A352A; padding-top: 10px; padding-left: 10px;">
                             <h2><?echo $result['text'];?></h2s> 
-                            <div class="d-flex">
+                            <div class="d-flex" style="padding-top: 10px;">
                                 <h1><?echo $result['price'] . " р/кг"?></h1>
                                 <div class="favorite_btn"></div>
                             </div>
                            
                         </div>
                            
-                    </div>
-                                
-                  
-
+                    </div>       
+                    <form action="deleteAd.php" method="GET">    
+                        <input name="del_id" type="text" value="<?echo $result['id'];?>" style="display: none;"> 
+                        <button type="button">Удалить</button>
+                    </form>               
                 <?
 		  			} 
 				?> 

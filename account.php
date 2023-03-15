@@ -62,7 +62,7 @@
             border: 3px solid #4A352A; 
             height: 65px;
             width: 200px;
-            border-radius: 50px;
+            border-radius: 25px;
             text-align: center;
             margin-left:auto;
             margin-right: auto;
@@ -90,7 +90,7 @@
                 </div>
                 <p style="margin-left: 680px;">Пароль</p>
                 <div style="text-align: center;">
-                    <input name="password" type="text" class="enterInput inputs">
+                    <input name="password" type="password" class="enterInput inputs">
                 </div>
                 
                 <div style="text-align: center;"><button class="enter_btn">Вход</button></div>
