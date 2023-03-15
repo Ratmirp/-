@@ -91,10 +91,10 @@
                 </div>
         </div>
 
-<div class="extra_main">
-        <img src="img/ex1.png">
-        <h2 style="text-align: center; color: black;">Рога, копыта, черепа, кости</h2>
-</div>
+            <div class="extra_main">
+                    <img src="img/ex1.png">
+                    <h2 style="text-align: center; color: black;">Рога, копыта, черепа, кости</h2>
+            </div>
 
         </div>
 
