@@ -18,7 +18,7 @@ body {
     border-radius: 0% 0% 20px 20px;
 
 }
-.back_head {
+.back_skin{
     background: #F4EBE0;
     position: absolute;
     height: 50px;
@@ -29,6 +29,7 @@ body {
     height: 130px;
     background: #F4EBE0;
     border-radius: 0% 0% 60px 60px;
+    z-index: 15;
 }
 #navbar {        
     position: fixed;
@@ -45,10 +46,7 @@ body {
     background: url("img/logo.svg");
     background-size: 100% 100%;
 }
-.favorite{
-    background: url("img/favorites.svg");
-    background-size: 100% 100%;
-}
+
 .katalog {
     width: 160px;
     height: 72px;
@@ -67,12 +65,7 @@ body {
     margin-left: 20px;
     margin-top: 25px;
 }
-.categories {
-    width: 500px;
-    height: 600px;
-    background: #F4EBE0;
-    margin-left: 50px;
-}
+
 .active_ads {
     width: 1200px;
     height: 230px;
@@ -158,19 +151,6 @@ body {
     margin-top: 5px;
     position: absolute;
 }
-.string {
-    width: 220px;
-    height: 9px;
-    background: #F4EBE0;
-    margin-left: 32px;
-    margin-top: 20px;
-}
-.gui_texts {
-    background: #F4EBE0;
-    height: 272px;
-    width: 272px;
-    margin-left: 45px;
-}
 .lenta {
     display: flex;
     width: 1000px;
@@ -178,3 +158,47 @@ body {
     margin-left: 180px;
     margin-top: 60px;
 }
+.carousel_div {
+    height: 500px;
+    background-size: cover;
+}
+.kategories {
+    width: 1800px;
+    height: 90px;
+    border-radius: 20px;
+    background: #F4EBE0;
+    margin-top: 175px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.carusel {
+    margin-top: 70px; 
+    width: 1200px;
+    margin-left: 70px;
+}
+.extra_main {
+    width: 440px;
+    height: 580px;
+    border-radius: 20px;
+    background: #F4EBE0;
+    margin-left: 55px;
+    margin-top: 70px;
+}
+.extra_carusel {
+    width: 100%;
+    height: 80px;
+    padding-top: 15px;
+    border-radius:  0% 0% 60px 60px;
+    background: #F4EBE0;
+    text-align: center;
+    color: black;
+    
+}
+.favorite_btn {
+    width: 70px;
+    height: 70px;
+    background: url(img/favorites.svg);
+    background-size: 100% 100%;
+    margin-left: auto;
+}
+

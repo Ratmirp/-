@@ -1,3 +1,4 @@
+<?session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,18 +13,24 @@
         }
         .inputs {
             background: #F4EBE0; 
-            width: 400px; 
+            width: 600px; 
             height: 40px; 
             border: 3px solid #4A352A; 
             border-radius: 17px; 
-            margin-top: 20px;
             font-size: 20px;
         }
+        .back_btn {
+            border: 3px solid #4A352A; 
+            background: #F4EBE0; 
+            border-radius: 17px; 
+            font-size: 20px;
+            width: 95px; 
+            height: 40px; 
+            padding-top: 10px;
+            padding-left: 10px;
+            font-family: ubuntu;
+        }
         .enter_plate {
-            width: 450px;
-            height: 750px;
-            background: #F4EBE0;
-            border: 3px solid #4A352A;
             z-index: 5;
             left: 1050px;
             top: 75px;
@@ -53,8 +60,8 @@
             background: #F4EBE0;
             color: #4A352A;
             border: 3px solid #4A352A; 
-            height: 35px;
-            width: 150px;
+            height: 65px;
+            width: 200px;
             border-radius: 50px;
             text-align: center;
             margin-left:auto;
@@ -62,6 +69,7 @@
             margin-top: 15px;
             transition: 0.5s;
             font-size: 20px;
+            padding-top: 8px;
         }
         .redistr_btn:hover{
             color: #F4EBE0;
@@ -69,28 +77,36 @@
         }
             </style>
 </head>
-<body>
+<body style="overflow-y: auto; margin: 0; background: url(img/bgw.png); ">
+        <div class="back_btn">Вернутся</div>
             <!-- Вход в аккаунт-->
             <div class="enter_plate">
             
             <form action="login.php" method="POST">
+                <h1 style="text-align: center;">Вход</h1>
+                <p style="margin-left: 680px;">Имя</p>
                 <div style="text-align: center;">
-                    <input name="login" type="text" class="enterInput inputs" placeholder="Имя">
-                    <input name="password" type="text" class="enterInput inputs" placeholder="Пароль">
+                    <input name="login" type="text" class="enterInput inputs">
+                </div>
+                <p style="margin-left: 680px;">Пароль</p>
+                <div style="text-align: center;">
+                    <input name="password" type="text" class="enterInput inputs">
                 </div>
                 
                 <div style="text-align: center;"><button class="enter_btn">Вход</button></div>
                 
             </form>
             
-            <div class="redistr_btn col-7">Регистрация</div>
+            <div class="redistr_btn col-7">Ещё нет аккаунта? Зарегистрируйся!</div>
             <? $connect = mysqli_connect('127.0.0.1','root','', 'furmarket');
 				$user = mysqli_query($connect, "SELECT * FROM users WHERE id = '{$_SESSION['id']}'");
 				$user_result = mysqli_fetch_assoc($user);
-                echo $_SESSION['login'];
-                echo $_SESSION['id'];
+                    echo $_SESSION['login'];
+                    echo $_SESSION['email'];
+                    echo $_SESSION['role'];
+
             ?>
-        </div>
+            
         <script src="scripts/script_account.js"></script>
 </body>
 </html>

@@ -43,7 +43,7 @@
         }
     </style>
 </head>
-<body>
+<body style="background: url(img/bgw.png)">
     <form action="registrationCheak.php" method="POST">
             <div class="box">
                 <span>Добро Пожаловать!</span>
@@ -54,7 +54,7 @@
             
                 <input name="email_log" type="text" class="inputs" placeholder="почта" >
 
-                <input name="password_log" type="text" class="inputs" placeholder="пароль">
+                <input name="password_log" type="password" class="inputs" placeholder="пароль">
 
                 <select class="role_input" name="role_log" style="background: #F4EBE0;">
                     <option class="options">Покупатель</option>

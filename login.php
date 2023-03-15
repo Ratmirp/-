@@ -10,6 +10,6 @@ if($num == 1){
     $_SESSION = $row;
     header("Location: index.php");
 }else {
-    echo "такого пользователя не существует";
+    header("Location: account.php?=нету_такого_пользователя");
 }
 ?>
